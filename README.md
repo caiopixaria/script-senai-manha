@@ -1,2 +1,2 @@
 # Script SENAI Manhã
-Scripts para a turma da manhã do curso de redes de computadores
+Scripts para a turma da MANHÇA do Curso Técnico de Redes de Computadores
