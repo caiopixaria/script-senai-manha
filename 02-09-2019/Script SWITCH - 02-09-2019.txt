@@ -1,0 +1,19 @@
+enable
+configure terminal
+hostname SW-03
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret SenhaEnable
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15
+password SenhadaVTY
+login
+exit
+interface vlan 1
+ip address 10.0.63.254 255.255.192.0
+no shutdown
+exit
+ip default-gateway 10.0.0.1
+do wr

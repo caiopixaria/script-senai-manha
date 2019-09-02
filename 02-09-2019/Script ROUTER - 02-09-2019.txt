@@ -1,0 +1,25 @@
+enable
+configure terminal
+hostname RT-00
+enable secret SenhaEnable
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS"
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15
+password SenhadaVTY
+login
+exit
+interface gigabitethernet 0/0
+ip address 192.168.0.1 255.255.255.0
+no shutdown
+exit
+interface gigabitethernet 0/1
+ip address 172.16.0.1 255.255.0.0
+no shutdown
+exit
+interface gigabitethernet 0/2
+ip address 10.0.0.1 255.255.192.0
+no shutdown
+do wr
