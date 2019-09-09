@@ -37,7 +37,5 @@ login
 exit
 username lucasjorge privilege 15 secret Batata
 username estagiario privilege 1 secret senha
-login block-for 60 attempts 3 within 60
-security password min-lenght 8
 service password-encryption
 do wr
