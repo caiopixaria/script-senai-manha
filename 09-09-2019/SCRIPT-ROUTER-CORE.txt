@@ -1,0 +1,43 @@
+enable
+configure terminal
+hostname RT-CORE
+banner motd "APENAS PESSOAS AUTORIZADAS"
+enable secret SenhaEnable
+ip domain-name peachanddaisy.local
+crypto key generate rsa general-keys modulus 1024
+interface gigabitEthernet 0/0
+ip address 192.168.64.1 255.255.248.0
+description REDE-1
+no shutdown
+exit
+interface gigabitEthernet 1/0 
+ip address 192.168.0.1 255.255.192.0
+description REDE-2
+no shutdown
+exit
+interface gigabitEthernet 2/0
+ip address 192.168.72.1 255.255.252.0
+description REDE-3
+no shutdown
+exit
+interface gigabitEthernet 3/0
+ip address 192.168.76.1 255.255.255.224
+description REDE-4
+no shutdown
+exit
+line console 0
+password SenhadaConsole
+login
+exit
+line vty 0 15
+password SenhadaVTY
+transport input ssh
+exec-timeout 10
+login
+exit
+username lucasjorge privilege 15 secret Batata
+username estagiario privilege 1 secret senha
+login block-for 60 attempts 3 within 60
+security password min-lenght 8
+service password-encryption
+do wr
