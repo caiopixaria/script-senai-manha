@@ -1,0 +1,105 @@
+habilitar 
+configurar terminal 
+nome do host SW-1
+banner motd "ACESSO APENAS PARA O DEPARTAMENTO DE TI"
+ativar senha secretaEnable
+console de linha 0
+login local
+Saída 
+nome de usuário Igor privilégio 15 segredo SenhaIgor
+nome de usuário Pedro privilégio 15 segredo SenhaPedro 
+nome de usuário Caio privilégio 15 segredo SenhaCaio 
+nome de usuário Rafael privilégio 15 segredo SenhaRafael 
+nome de usuário Vinicius privilégio 15 segredo SenhaVinicius 
+nome de domínio ip peachanddaisy.local
+chave criptografada gerar módulo de chaves gerais rsa 1024
+serviço de criptografia de senha
+linha vty 0 15
+senha SenhadaVTY
+entrada de transporte ssh
+exec-timeout 10
+login local
+Saída
+gateway padrão 172.16.20.33 do ip
+vlan 10
+nome RH
+vlan 20
+nome Qualidade 
+vlan 30
+nome Recepção
+vlan 40
+nome Consultores 
+vlan 50
+nome Analistas 
+vlan 60
+nome TI 
+vlan 70
+nome Administração
+vlan 80
+nome Servidores
+vlan 90
+nome Voz 
+vlan 100
+nome Finanças
+interface f0 / 1
+acesso ao modo switchport
+acesso switchport vlan 10
+descrição 172.16.18.0 
+interface f0 / 2
+acesso ao modo switchport
+acesso switchport vlan 70
+descrição 172.16.18.128
+interface f0 / 3
+acesso ao modo switchport 
+acesso switchport vlan 20 
+descrição 172.16.20.0
+interface f0 / 4
+acesso ao modo switchport 
+acesso switchport vlan 30
+descrição 172.16.19.192
+interface f0 / 5
+acesso ao modo switchport
+acesso switchport vlan 40
+descrição 172.16.8.0
+interface f0 / 6
+acesso ao modo switchport 
+acesso switchport vlan 50
+descrição 172.16.16.0
+interface f0 / 7
+acesso ao modo switchport
+acesso switchport vlan 60
+descrição 172.16.19.128
+interface f0 / 12
+acesso ao modo switchport 
+acesso switchport vlan 80
+descrição 172.16.20.32
+interface f0 / 9
+acesso ao modo switchport 
+acesso switchport vlan 100
+descrição 172.16.19.0
+interface f0 / 10
+acesso ao modo switchport 
+acesso switchport vlan 90
+descrição 172.16.0.0
+Saída
+interface f0 / 11
+tronco do modo switchport
+switchport tronco nativo vlan 99
+interface f0 / 11
+tronco do modo switchport
+tronco de switchport permitido vlan 10
+switchport tronco permitido vlan adicionar 20
+o tronco do switchport permitido vlan adiciona 30
+switchport tronco permitido vlan adicionar 40
+switchport tronco permitido vlan adicionar 50
+switchport tronco permitido vlan adicionar 60
+o tronco do switchport permitido vlan adiciona 70
+switchport tronco permitido vlan adicionar 80
+switchport tronco permitido vlan add 90
+switchport tronco permitido adicionar vlan 99
+switchport tronco permitido vlan adicionar 100
+Saída
+interface vlan 1
+endereço IP 172.16.20.46 255.255.255.240
+sem desligamento
+faça wr
